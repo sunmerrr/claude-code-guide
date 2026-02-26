@@ -1,6 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { guide } from "../data/guide";
+import CopyCodeBlock from "../components/CopyCodeBlock";
 
 export default function Setup() {
   const sections = guide.install.filter((s) => s.id >= 3 && s.id <= 4);
@@ -18,7 +19,7 @@ export default function Setup() {
               {section.title}
             </a>
           </h2>
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} components={{ pre: CopyCodeBlock }}>
             {section.content}
           </ReactMarkdown>
         </section>

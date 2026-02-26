@@ -1,6 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { guide } from "../data/guide";
+import CopyCodeBlock from "../components/CopyCodeBlock";
 
 export default function Tips() {
   return (
@@ -16,7 +17,7 @@ export default function Tips() {
               {section.title}
             </a>
           </h2>
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} components={{ pre: CopyCodeBlock }}>
             {section.content}
           </ReactMarkdown>
         </section>
