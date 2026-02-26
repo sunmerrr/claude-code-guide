@@ -76,6 +76,19 @@ export default function Home() {
             ))}
           </ul>
         </Link>
+
+        <Link to="/advanced" className="card">
+          <span className="card-icon">
+            <ClaudeIcon size={36} color="#d4a574" />
+          </span>
+          <h2>심화 가이드</h2>
+          <p>MCP 연결과 커스텀 명령어로 더 강력하게</p>
+          <ul>
+            {guide.advanced.map((s) => (
+              <li key={s.id}>{s.title}</li>
+            ))}
+          </ul>
+        </Link>
       </div>
     </div>
   );

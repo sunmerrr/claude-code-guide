@@ -6,6 +6,7 @@ import Setup from "./pages/Setup";
 import Usage from "./pages/Usage";
 import Tips from "./pages/Tips";
 import FirstProject from "./pages/FirstProject";
+import Advanced from "./pages/Advanced";
 import ClaudeIcon from "./components/ClaudeIcon";
 import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
@@ -16,6 +17,7 @@ const NAV_LINKS = [
   { to: "/usage", label: "사용법" },
   { to: "/tips", label: "활용 팁" },
   { to: "/first-project", label: "첫 프로젝트" },
+  { to: "/advanced", label: "심화" },
 ];
 
 function Nav() {
@@ -66,6 +68,7 @@ export default function App() {
           <Route path="/usage" element={<Usage />} />
           <Route path="/tips" element={<Tips />} />
           <Route path="/first-project" element={<FirstProject />} />
+          <Route path="/advanced" element={<Advanced />} />
         </Routes>
       </main>
 

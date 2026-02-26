@@ -386,9 +386,122 @@ Claude Code에게 직접 물어보세요:
 에러 메시지를 보여주면 Claude가 원인을 분석하고 해결 방법을 알려줍니다.`,
     },
   ],
-  firstProject: [
+  advanced: [
     {
       id: 11,
+      slug: "mcp",
+      title: "MCP로 Claude Code 능력 확장하기",
+      content: `MCP(Model Context Protocol)는 Claude Code에 **외부 도구를 연결**하는 기능입니다. 기본 상태의 Claude Code도 강력하지만, MCP를 추가하면 더 많은 일을 할 수 있습니다.
+
+### MCP란?
+
+쉽게 말해, Claude Code에 **플러그인을 설치**하는 것과 같습니다.
+
+예를 들어:
+- 웹 검색 MCP → Claude가 최신 정보를 검색할 수 있음
+- GitHub MCP → Claude가 이슈, PR을 직접 관리할 수 있음
+- 데이터베이스 MCP → Claude가 DB를 직접 조회할 수 있음
+
+### MCP 서버 추가하는 법
+
+Claude Code 대화창에서 아래 명령어를 입력합니다:
+
+\`\`\`
+/mcp
+\`\`\`
+
+또는 직접 설정할 수도 있습니다:
+
+\`\`\`bash
+claude mcp add 서버이름 -- 실행명령어
+\`\`\`
+
+### 자주 쓰는 MCP 서버 예시
+
+**1. 파일 시스템 (Filesystem)**
+특정 폴더의 파일을 읽고 쓸 수 있게 해줍니다:
+\`\`\`bash
+claude mcp add filesystem -- npx -y @modelcontextprotocol/server-filesystem ~/Documents
+\`\`\`
+
+**2. GitHub**
+GitHub 저장소, 이슈, PR을 관리할 수 있습니다:
+\`\`\`bash
+claude mcp add github -- npx -y @modelcontextprotocol/server-github
+\`\`\`
+
+> **참고**: GitHub MCP를 사용하려면 GitHub 개인 액세스 토큰이 필요합니다.
+
+### 설치된 MCP 확인하기
+
+현재 연결된 MCP 서버 목록을 확인하려면:
+
+\`\`\`bash
+claude mcp list
+\`\`\`
+
+### 팁
+- MCP는 필수가 아닙니다. 기본 Claude Code만으로도 충분히 많은 일을 할 수 있습니다
+- 필요한 기능이 생겼을 때 하나씩 추가하는 것을 추천합니다
+- 더 많은 MCP 서버는 [MCP 서버 목록](https://github.com/modelcontextprotocol/servers)에서 찾을 수 있습니다`,
+    },
+    {
+      id: 12,
+      slug: "custom-slash-commands",
+      title: "커스텀 슬래시 명령어 만들기",
+      content: `자주 사용하는 요청을 **나만의 슬래시 명령어**로 저장해두면 매번 긴 문장을 입력하지 않아도 됩니다.
+
+### 커스텀 명령어란?
+
+예를 들어, 매번 "이 코드를 리뷰해줘. 버그가 있는지, 성능 개선할 곳이 있는지 알려줘"라고 입력하는 대신, \`/my-review\`라고만 치면 같은 요청이 실행되는 것입니다.
+
+### 만드는 법
+
+프로젝트 폴더에 \`.claude/commands\` 폴더를 만들고 그 안에 마크다운 파일을 추가합니다.
+
+Claude Code에게 바로 요청할 수 있습니다:
+
+\`\`\`
+.claude/commands/review.md 파일을 만들어줘.
+내용은 "이 프로젝트의 코드를 리뷰해줘. 버그, 보안 문제, 성능 개선점을 찾아서 알려줘."로 해줘.
+\`\`\`
+
+이제 Claude Code에서 \`/project:review\`라고 입력하면 이 명령어가 실행됩니다.
+
+### 실용적인 예시
+
+**코드 설명 명령어** (\`.claude/commands/explain.md\`):
+\`\`\`markdown
+이 프로젝트의 구조와 각 파일의 역할을 초보자도 이해할 수 있게 설명해줘.
+\`\`\`
+→ \`/project:explain\`으로 사용
+
+**번역 명령어** (\`.claude/commands/translate.md\`):
+\`\`\`markdown
+이 프로젝트의 모든 한국어 텍스트를 영어로 번역해줘.
+코드 주석과 사용자에게 보이는 텍스트 모두 포함해줘.
+\`\`\`
+→ \`/project:translate\`로 사용
+
+**커밋 명령어** (\`.claude/commands/commit.md\`):
+\`\`\`markdown
+변경된 파일을 확인하고 적절한 커밋 메시지를 한국어로 작성해서 커밋해줘.
+\`\`\`
+→ \`/project:commit\`으로 사용
+
+### 개인 명령어 vs 프로젝트 명령어
+
+| 위치 | 사용 범위 | 호출 방법 |
+|------|----------|----------|
+| \`.claude/commands/\` | 이 프로젝트에서만 | \`/project:명령어\` |
+| \`~/.claude/commands/\` | 모든 프로젝트에서 | \`/user:명령어\` |
+
+> **팁**: 팀 프로젝트에서는 \`.claude/commands/\`에 명령어를 만들어 Git에 함께 올리면 팀원 모두가 같은 명령어를 사용할 수 있습니다.`,
+    },
+  ],
+  firstProject: [
+    {
+      id: 13,
       slug: "start-project",
       title: "프로젝트 시작하기",
       content: `설치와 사용법을 배웠으니, 이제 실제로 뭔가 만들어 봅시다! 간단한 "카페 메뉴 웹페이지"를 Claude Code와 함께 만들겠습니다.
@@ -450,7 +563,7 @@ start index.html       # Windows
 > **팁**: Claude Code가 실행 중인 터미널에서는 직접 명령어를 입력할 수 없습니다. 직접 열려면 새 터미널 창을 열어야 합니다.`,
     },
     {
-      id: 12,
+      id: 14,
       slug: "iterate-and-publish",
       title: "수정 요청하고 완성하기",
       content: `첫 결과물이 마음에 들지 않아도 괜찮습니다. Claude Code의 진짜 장점은 **대화하면서 계속 수정할 수 있다**는 것입니다.
