@@ -603,7 +603,7 @@ Claude Code에서 바로 Git 초기화와 커밋도 할 수 있습니다:
 
 GitHub에 올리는 자세한 방법은 다음 가이드에서 이어서 알아보세요:
 
-👉 [GitHub 사용 가이드로 이동하기](/github-guide)
+👉 [GitHub 사용 가이드로 이동하기](https://lulu-github-guide.vercel.app/)
 
 > **축하합니다!** Claude Code 설치부터 첫 프로젝트 완성까지 모두 마쳤습니다. 이제 어떤 아이디어든 Claude Code와 함께 만들어 보세요.`,
     },
