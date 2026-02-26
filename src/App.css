@@ -378,11 +378,17 @@ body {
 }
 
 /* ===== Tables ===== */
+.section .table-wrap {
+  overflow-x: auto;
+  margin: 0.75rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+
 .section table {
   width: 100%;
   border-collapse: collapse;
-  margin: 0.75rem 0;
   font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .section th,

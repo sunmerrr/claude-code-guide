@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { guide } from "../data/guide";
-import CopyCodeBlock from "../components/CopyCodeBlock";
+import mdComponents from "../components/mdComponents";
 import PageNav from "../components/PageNav";
 
 export default function Advanced() {
@@ -18,7 +18,7 @@ export default function Advanced() {
               {section.title}
             </a>
           </h2>
-          <ReactMarkdown remarkPlugins={[remarkGfm]} components={{ pre: CopyCodeBlock }}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} components={mdComponents}>
             {section.content}
           </ReactMarkdown>
         </section>
