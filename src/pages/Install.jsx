@@ -2,6 +2,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { guide } from "../data/guide";
 import CopyCodeBlock from "../components/CopyCodeBlock";
+import PageNav from "../components/PageNav";
 
 export default function Install() {
   const sections = guide.install.filter((s) => s.id <= 2);
@@ -24,6 +25,8 @@ export default function Install() {
           </ReactMarkdown>
         </section>
       ))}
+
+      <PageNav current="/install" />
     </div>
   );
 }

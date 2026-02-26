@@ -13,9 +13,7 @@ export default function Home() {
 
       <div className="card-grid">
         <Link to="/install" className="card">
-          <span className="card-icon">
-            <ClaudeIcon size={36} color="#d4a574" />
-          </span>
+          <span className="card-step">1</span>
           <h2>환경 준비</h2>
           <p>Node.js 설치와 터미널 기본 사용법</p>
           <ul>
@@ -26,9 +24,7 @@ export default function Home() {
         </Link>
 
         <Link to="/setup" className="card">
-          <span className="card-icon">
-            <ClaudeIcon size={36} color="#d4a574" />
-          </span>
+          <span className="card-step">2</span>
           <h2>Claude Code 설정</h2>
           <p>Claude Code 설치와 API 키 등록</p>
           <ul>
@@ -39,9 +35,7 @@ export default function Home() {
         </Link>
 
         <Link to="/usage" className="card">
-          <span className="card-icon">
-            <ClaudeIcon size={36} color="#d4a574" />
-          </span>
+          <span className="card-step">3</span>
           <h2>사용 가이드</h2>
           <p>할 수 있는 일과 유용한 명령어</p>
           <ul>
@@ -52,9 +46,7 @@ export default function Home() {
         </Link>
 
         <Link to="/tips" className="card">
-          <span className="card-icon">
-            <ClaudeIcon size={36} color="#d4a574" />
-          </span>
+          <span className="card-step">4</span>
           <h2>활용 팁</h2>
           <p>AI에게 잘 요청하는 법과 슬래시 명령어 심화</p>
           <ul>
@@ -65,10 +57,8 @@ export default function Home() {
         </Link>
 
         <Link to="/first-project" className="card">
-          <span className="card-icon">
-            <ClaudeIcon size={36} color="#d4a574" />
-          </span>
-          <h2>첫 프로젝트</h2>
+          <span className="card-step">5</span>
+          <h2>개발 실습</h2>
           <p>Claude Code로 실제 웹페이지를 만들어 보는 실습</p>
           <ul>
             {guide.firstProject.map((s) => (
@@ -78,9 +68,7 @@ export default function Home() {
         </Link>
 
         <Link to="/advanced" className="card">
-          <span className="card-icon">
-            <ClaudeIcon size={36} color="#d4a574" />
-          </span>
+          <span className="card-step">6</span>
           <h2>심화 가이드</h2>
           <p>MCP 연결과 커스텀 명령어로 더 강력하게</p>
           <ul>

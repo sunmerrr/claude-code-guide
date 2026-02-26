@@ -16,7 +16,7 @@ const NAV_LINKS = [
   { to: "/setup", label: "설정" },
   { to: "/usage", label: "사용법" },
   { to: "/tips", label: "활용 팁" },
-  { to: "/first-project", label: "첫 프로젝트" },
+  { to: "/first-project", label: "개발 실습" },
   { to: "/advanced", label: "심화" },
 ];
 

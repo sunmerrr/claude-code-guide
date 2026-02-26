@@ -2,11 +2,12 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { guide } from "../data/guide";
 import CopyCodeBlock from "../components/CopyCodeBlock";
+import PageNav from "../components/PageNav";
 
 export default function FirstProject() {
   return (
     <div className="page">
-      <h1>첫 프로젝트</h1>
+      <h1>개발 실습</h1>
       <p className="page-desc">Claude Code로 실제 웹페이지를 만들어 보는 실습입니다.</p>
 
       {guide.firstProject.map((section) => (
@@ -22,6 +23,8 @@ export default function FirstProject() {
           </ReactMarkdown>
         </section>
       ))}
+
+      <PageNav current="/first-project" />
     </div>
   );
 }

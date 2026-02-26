@@ -2,6 +2,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { guide } from "../data/guide";
 import CopyCodeBlock from "../components/CopyCodeBlock";
+import PageNav from "../components/PageNav";
 
 export default function Usage() {
   return (
@@ -22,6 +23,8 @@ export default function Usage() {
           </ReactMarkdown>
         </section>
       ))}
+
+      <PageNav current="/usage" />
     </div>
   );
 }
