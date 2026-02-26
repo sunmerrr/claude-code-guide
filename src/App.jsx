@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, NavLink } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import Home from "./pages/Home";
 import Install from "./pages/Install";
 import Setup from "./pages/Setup";
@@ -10,7 +10,7 @@ import "./App.css";
 
 export default function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ScrollToTop />
       <nav className="nav">
         <NavLink to="/" end className="nav-brand">
@@ -39,6 +39,6 @@ export default function App() {
         <p>비개발자를 위한 Claude Code 가이드</p>
         <p>더 자세한 내용은 <a href="https://code.claude.com/docs" target="_blank" rel="noopener noreferrer">공식 문서</a>에서 확인할 수 있습니다.</p>
       </footer>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
