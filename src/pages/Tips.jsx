@@ -14,7 +14,6 @@ export default function Tips() {
         <section key={section.id} id={section.slug} className="section">
           <h2>
             <a href={`#${section.slug}`} className="section-link">
-              <span className="step-num">{section.id}</span>
               {section.title}
             </a>
           </h2>
