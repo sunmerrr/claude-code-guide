@@ -63,6 +63,19 @@ export default function Home() {
             ))}
           </ul>
         </Link>
+
+        <Link to="/first-project" className="card">
+          <span className="card-icon">
+            <ClaudeIcon size={36} color="#d4a574" />
+          </span>
+          <h2>첫 프로젝트</h2>
+          <p>Claude Code로 실제 웹페이지를 만들어 보는 실습</p>
+          <ul>
+            {guide.firstProject.map((s) => (
+              <li key={s.id}>{s.title}</li>
+            ))}
+          </ul>
+        </Link>
       </div>
     </div>
   );
