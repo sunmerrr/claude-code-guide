@@ -348,7 +348,7 @@ body {
   font-size: 0.88em;
 }
 
-.section pre {
+.section pre:not(.code-block pre) {
   background: var(--code-bg);
   border: 1px solid var(--border);
   border-radius: 8px;
