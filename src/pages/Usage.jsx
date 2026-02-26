@@ -9,10 +9,12 @@ export default function Usage() {
       <p className="page-desc">Claude Code로 할 수 있는 일과 유용한 명령어를 알아봅니다.</p>
 
       {guide.usage.map((section) => (
-        <section key={section.id} className="section">
+        <section key={section.id} id={section.slug} className="section">
           <h2>
-            <span className="step-num">{section.id}</span>
-            {section.title}
+            <a href={`#${section.slug}`} className="section-link">
+              <span className="step-num">{section.id}</span>
+              {section.title}
+            </a>
           </h2>
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {section.content}

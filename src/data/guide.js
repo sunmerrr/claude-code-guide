@@ -4,6 +4,7 @@ export const guide = {
   install: [
     {
       id: 1,
+      slug: "nodejs",
       title: "사전 준비 — Node.js 설치",
       content: `Claude Code는 Node.js 위에서 동작합니다. 먼저 Node.js를 설치해야 합니다.
 
@@ -26,6 +27,7 @@ node --version
     },
     {
       id: 2,
+      slug: "terminal",
       title: "터미널 기본 사용법",
       content: `터미널은 텍스트로 컴퓨터에게 명령을 내리는 도구입니다.
 
@@ -49,6 +51,7 @@ node --version
     },
     {
       id: 3,
+      slug: "install-claude",
       title: "Claude Code 설치",
       content: `Node.js가 설치되었다면 한 줄 명령어로 Claude Code를 설치할 수 있습니다.
 
@@ -72,6 +75,7 @@ claude --version
     },
     {
       id: 4,
+      slug: "api-key",
       title: "API 키 설정",
       content: `Claude Code를 사용하려면 Anthropic API 키가 필요합니다.
 
@@ -82,9 +86,16 @@ claude --version
 4. **Create Key** 버튼을 클릭합니다
 5. 생성된 키를 복사합니다 (다시 볼 수 없으니 안전한 곳에 저장하세요)
 
-### 키 등록
+### 키 등록 — 방법 1: 브라우저 로그인 (추천)
+터미널에서 아래 명령어를 입력하면 브라우저가 열리고 로그인할 수 있습니다:
+\`\`\`bash
+claude auth login
+\`\`\`
+로그인이 완료되면 자동으로 인증됩니다.
+
+### 키 등록 — 방법 2: API 키 직접 입력
 처음 \`claude\` 명령어를 실행하면 API 키를 입력하라는 안내가 나옵니다.
-복사한 키를 붙여넣으면 됩니다.
+위에서 복사한 키를 붙여넣으면 됩니다.
 
 ### 요금 안내
 - API 사용량에 따라 요금이 발생합니다
@@ -95,6 +106,7 @@ claude --version
   usage: [
     {
       id: 5,
+      slug: "features",
       title: "Claude Code로 할 수 있는 일",
       content: `Claude Code는 터미널에서 AI와 대화하며 코딩하는 도구입니다. 다양한 작업을 자연어로 요청할 수 있습니다.
 
@@ -130,6 +142,7 @@ claude --version
     },
     {
       id: 6,
+      slug: "commands",
       title: "유용한 명령어 모음",
       content: `Claude Code에서 자주 사용하는 명령어와 슬래시 명령어를 정리했습니다.
 
@@ -176,6 +189,7 @@ claude --version
   tips: [
     {
       id: 7,
+      slug: "principles",
       title: "좋은 요청의 3가지 원칙",
       content: `Claude Code를 더 효과적으로 사용하려면 요청을 잘 하는 것이 중요합니다.
 
@@ -196,6 +210,7 @@ claude --version
     },
     {
       id: 8,
+      slug: "slash-commands",
       title: "자주 쓰는 슬래시 명령어 심화",
       content: `슬래시 명령어를 상황별로 자세히 알아봅니다.
 

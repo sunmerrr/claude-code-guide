@@ -9,10 +9,12 @@ export default function Tips() {
       <p className="page-desc">AI에게 잘 요청하는 법과 자주 쓰는 요청 예시를 알아봅니다.</p>
 
       {guide.tips.map((section) => (
-        <section key={section.id} className="section">
+        <section key={section.id} id={section.slug} className="section">
           <h2>
-            <span className="step-num">{section.id}</span>
-            {section.title}
+            <a href={`#${section.slug}`} className="section-link">
+              <span className="step-num">{section.id}</span>
+              {section.title}
+            </a>
           </h2>
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {section.content}
