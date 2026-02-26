@@ -77,30 +77,41 @@ claude --version
       id: 4,
       slug: "api-key",
       title: "API 키 설정",
-      content: `Claude Code를 사용하려면 Anthropic API 키가 필요합니다.
+      content: `Claude Code를 사용하려면 인증이 필요합니다. 두 가지 방법 중 하나를 선택하세요.
 
-### API 키 발급
+### 방법 1: 브라우저 로그인 (추천)
+Claude.ai 계정으로 로그인하는 방법입니다. **API 키가 필요 없습니다.**
+
+\`\`\`bash
+claude auth login
+\`\`\`
+
+브라우저가 열리면 Claude.ai 계정으로 로그인하세요. 완료되면 자동으로 인증됩니다.
+
+> **요금**: Claude Pro 또는 Max 구독이 필요합니다. 구독 요금 내에서 사용할 수 있습니다.
+
+### 방법 2: API 키 직접 입력
+Anthropic API 키를 발급받아 사용하는 방법입니다.
+
+**API 키 발급**
 1. [console.anthropic.com](https://console.anthropic.com) 에 접속합니다
 2. 회원가입 또는 로그인합니다
 3. **API Keys** 메뉴로 이동합니다
 4. **Create Key** 버튼을 클릭합니다
 5. 생성된 키를 복사합니다 (다시 볼 수 없으니 안전한 곳에 저장하세요)
 
-### 키 등록 — 방법 1: 브라우저 로그인 (추천)
-터미널에서 아래 명령어를 입력하면 브라우저가 열리고 로그인할 수 있습니다:
-\`\`\`bash
-claude auth login
-\`\`\`
-로그인이 완료되면 자동으로 인증됩니다.
-
-### 키 등록 — 방법 2: API 키 직접 입력
 처음 \`claude\` 명령어를 실행하면 API 키를 입력하라는 안내가 나옵니다.
 위에서 복사한 키를 붙여넣으면 됩니다.
 
-### 요금 안내
-- API 사용량에 따라 요금이 발생합니다
-- [console.anthropic.com](https://console.anthropic.com)에서 사용량을 확인할 수 있습니다
-- 처음 시작할 때 소액의 크레딧이 제공될 수 있습니다`,
+> **요금**: API 사용량에 따라 과금됩니다. [console.anthropic.com](https://console.anthropic.com)에서 사용량을 확인할 수 있습니다.
+
+### 두 방법 비교
+
+| | 브라우저 로그인 | API 키 |
+|--|----------------|--------|
+| 설정 난이도 | 쉬움 (로그인만 하면 끝) | 보통 (키 발급 필요) |
+| 요금 방식 | 구독제 (Pro/Max) | 사용량 기반 과금 |
+| API 키 필요 | 불필요 | 필요 |`,
     },
   ],
   usage: [
