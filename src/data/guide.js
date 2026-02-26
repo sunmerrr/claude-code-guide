@@ -71,6 +71,17 @@ claude --version
   \`\`\`bash
   sudo npm install -g @anthropic-ai/claude-code
   \`\`\`
+- **PowerShell 보안 오류 (Windows)**: \`PSSecurityException\` 또는 \`UnauthorizedAccess\` 오류가 나타나면, PowerShell의 실행 정책을 변경해야 합니다.
+  1. PowerShell을 **관리자 권한**으로 실행합니다 (시작 메뉴에서 "PowerShell" 검색 → 우클릭 → "관리자 권한으로 실행")
+  2. 아래 명령어를 입력합니다:
+  \`\`\`bash
+  Set-ExecutionPolicy RemoteSigned
+  \`\`\`
+  3. \`Y\`를 입력하여 확인합니다
+  4. 이후 다시 설치 명령어를 실행합니다:
+  \`\`\`bash
+  npm install -g @anthropic-ai/claude-code
+  \`\`\`
 - **명령어를 찾을 수 없음**: 터미널을 닫았다가 다시 열어보세요`,
     },
     {
