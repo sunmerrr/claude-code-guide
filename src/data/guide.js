@@ -102,7 +102,7 @@ claude auth login
 > **요금**: Claude Pro 또는 Max 구독이 필요합니다. 구독 요금 내에서 사용할 수 있습니다.
 
 ### 방법 2: API 키 직접 입력
-Anthropic API 키를 발급받아 사용하는 방법입니다.
+Anthropic API 키를 발급받아 환경 변수로 설정하는 방법입니다.
 
 **API 키 발급**
 1. [console.anthropic.com](https://console.anthropic.com) 에 접속합니다
@@ -111,8 +111,21 @@ Anthropic API 키를 발급받아 사용하는 방법입니다.
 4. **Create Key** 버튼을 클릭합니다
 5. 생성된 키를 복사합니다 (다시 볼 수 없으니 안전한 곳에 저장하세요)
 
-처음 \`claude\` 명령어를 실행하면 API 키를 입력하라는 안내가 나옵니다.
-위에서 복사한 키를 붙여넣으면 됩니다.
+**환경 변수 설정**
+
+macOS / Linux:
+\`\`\`bash
+export ANTHROPIC_API_KEY=sk-ant-...여기에_복사한_키_붙여넣기
+\`\`\`
+
+Windows (PowerShell):
+\`\`\`bash
+$env:ANTHROPIC_API_KEY = "sk-ant-...여기에_복사한_키_붙여넣기"
+\`\`\`
+
+설정 후 \`claude\` 명령어를 실행하면 바로 사용할 수 있습니다.
+
+> **참고**: 터미널을 닫으면 환경 변수가 초기화됩니다. 매번 설정하기 번거롭다면 방법 1(브라우저 로그인)을 추천합니다.
 
 > **요금**: API 사용량에 따라 과금됩니다. [console.anthropic.com](https://console.anthropic.com)에서 사용량을 확인할 수 있습니다.
 
@@ -327,19 +340,23 @@ Claude가 \`index.html\` 파일을 자동으로 생성해 줍니다. 파일 생�
 
 Claude가 파일을 만들고 나면 브라우저에서 바로 확인할 수 있습니다.
 
-**방법 1: 파일을 직접 열기**
+**방법 1: Claude에게 열어달라고 하기 (추천)**
+
+Claude Code 대화창에서 그대로 요청하세요:
+\`\`\`
+만든 파일을 브라우저에서 열어줘
+\`\`\`
+Claude가 알아서 파일을 열어줍니다.
+
+**방법 2: 직접 열기**
+
+새 터미널 창을 열고 프로젝트 폴더에서 실행하세요:
 \`\`\`bash
 open index.html        # macOS
 start index.html       # Windows
 \`\`\`
 
-**방법 2: 간이 서버로 열기**
-\`\`\`bash
-npx serve
-\`\`\`
-터미널에 표시되는 주소(보통 \`http://localhost:3000\`)를 브라우저에서 열면 됩니다.
-
-> **팁**: CSS나 JavaScript 파일이 여러 개일 때는 방법 2가 더 안정적입니다.`,
+> **팁**: Claude Code가 실행 중인 터미널에서는 직접 명령어를 입력할 수 없습니다. 직접 열려면 새 터미널 창을 열어야 합니다.`,
     },
     {
       id: 10,
