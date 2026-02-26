@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import { useState } from "react";
+import { BrowserRouter, Routes, Route, NavLink, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Install from "./pages/Install";
 import Setup from "./pages/Setup";
@@ -8,22 +9,52 @@ import ClaudeIcon from "./components/ClaudeIcon";
 import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 
+const NAV_LINKS = [
+  { to: "/install", label: "환경 준비" },
+  { to: "/setup", label: "설정" },
+  { to: "/usage", label: "사용법" },
+  { to: "/tips", label: "활용 팁" },
+];
+
+function Nav() {
+  const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  // 경로 변경 시 메뉴 닫기
+  useState(() => setOpen(false), [pathname]);
+
+  return (
+    <nav className="nav">
+      <div className="nav-inner">
+        <NavLink to="/" end className="nav-brand" onClick={() => setOpen(false)}>
+          <ClaudeIcon size={22} color="#d4a574" />
+          Claude Code 가이드
+        </NavLink>
+        <div className="nav-links nav-links-desktop">
+          {NAV_LINKS.map(({ to, label }) => (
+            <NavLink key={to} to={to}>{label}</NavLink>
+          ))}
+        </div>
+        <button className="hamburger" onClick={() => setOpen(!open)}>
+          {open ? "✕" : "☰"}
+        </button>
+      </div>
+      {open && (
+        <div className="nav-links-mobile">
+          {NAV_LINKS.map(({ to, label }) => (
+            <NavLink key={to} to={to} onClick={() => setOpen(false)}>{label}</NavLink>
+          ))}
+        </div>
+      )}
+    </nav>
+  );
+}
+
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <nav className="nav">
-        <NavLink to="/" end className="nav-brand">
-          <ClaudeIcon size={22} color="#d4a574" />
-          Claude Code 가이드
-        </NavLink>
-        <div className="nav-links">
-          <NavLink to="/install">환경 준비</NavLink>
-          <NavLink to="/setup">설정</NavLink>
-          <NavLink to="/usage">사용법</NavLink>
-          <NavLink to="/tips">활용 팁</NavLink>
-        </div>
-      </nav>
+      <Nav />
 
       <main className="container">
         <Routes>
