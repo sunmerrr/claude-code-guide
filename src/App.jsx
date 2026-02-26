@@ -37,6 +37,7 @@ export default function App() {
 
       <footer className="footer">
         <p>비개발자를 위한 Claude Code 가이드</p>
+        <p>더 자세한 내용은 <a href="https://code.claude.com/docs" target="_blank" rel="noopener noreferrer">공식 문서</a>에서 확인할 수 있습니다.</p>
       </footer>
     </BrowserRouter>
   );
