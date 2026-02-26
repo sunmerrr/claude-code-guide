@@ -15,8 +15,8 @@ const NAV_LINKS = [
   { to: "/install", label: "환경 준비" },
   { to: "/setup", label: "설정" },
   { to: "/usage", label: "사용법" },
-  { to: "/tips", label: "활용 팁" },
   { to: "/first-project", label: "개발 실습" },
+  { to: "/tips", label: "활용 팁" },
   { to: "/advanced", label: "심화" },
 ];
 

@@ -5,8 +5,8 @@ const PAGES = [
   { path: "/install", title: "환경 준비" },
   { path: "/setup", title: "설정" },
   { path: "/usage", title: "사용법" },
-  { path: "/tips", title: "활용 팁" },
   { path: "/first-project", title: "개발 실습" },
+  { path: "/tips", title: "활용 팁" },
   { path: "/advanced", title: "심화 가이드" },
 ];
 

@@ -45,23 +45,23 @@ export default function Home() {
           </ul>
         </Link>
 
-        <Link to="/tips" className="card">
+        <Link to="/first-project" className="card">
           <span className="card-step">4</span>
-          <h2>활용 팁</h2>
-          <p>AI에게 잘 요청하는 법과 슬래시 명령어 심화</p>
+          <h2>개발 실습</h2>
+          <p>Claude Code로 실제 웹페이지를 만들어 보는 실습</p>
           <ul>
-            {guide.tips.map((s) => (
+            {guide.firstProject.map((s) => (
               <li key={s.id}>{s.title}</li>
             ))}
           </ul>
         </Link>
 
-        <Link to="/first-project" className="card">
+        <Link to="/tips" className="card">
           <span className="card-step">5</span>
-          <h2>개발 실습</h2>
-          <p>Claude Code로 실제 웹페이지를 만들어 보는 실습</p>
+          <h2>활용 팁</h2>
+          <p>AI에게 잘 요청하는 법과 슬래시 명령어 심화</p>
           <ul>
-            {guide.firstProject.map((s) => (
+            {guide.tips.map((s) => (
               <li key={s.id}>{s.title}</li>
             ))}
           </ul>
