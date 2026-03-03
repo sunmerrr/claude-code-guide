@@ -10,7 +10,7 @@ export default function Setup() {
   return (
     <div className="page">
       <h1>Claude Code 설정</h1>
-      <p className="page-desc">Claude Code를 설치하고 API 키를 등록합니다.</p>
+      <p className="page-desc">Claude Code를 설치하고 계정을 연결합니다.</p>
 
       {sections.map((section) => (
         <section key={section.id} id={section.slug} className="section">

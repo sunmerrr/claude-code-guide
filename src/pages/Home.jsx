@@ -26,7 +26,7 @@ export default function Home() {
         <Link to="/setup" className="card">
           <span className="card-step">2</span>
           <h2>Claude Code 설정</h2>
-          <p>Claude Code 설치와 API 키 등록</p>
+          <p>Claude Code 설치와 계정 연결</p>
           <ul>
             {guide.install.filter((s) => s.id >= 3).map((s) => (
               <li key={s.id}>{s.title}</li>

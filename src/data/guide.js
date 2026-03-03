@@ -86,56 +86,31 @@ claude --version
     },
     {
       id: 4,
-      slug: "api-key",
-      title: "API 키 설정",
-      content: `Claude Code를 사용하려면 인증이 필요합니다. 두 가지 방법 중 하나를 선택하세요.
+      slug: "account",
+      title: "계정 연결",
+      content: `Claude Code를 사용하려면 인증이 필요합니다. Claude.ai 계정으로 로그인하면 됩니다.
 
-### 방법 1: 브라우저 로그인 (추천)
-Claude.ai 계정으로 로그인하는 방법입니다. **API 키가 필요 없습니다.**
+### 로그인 방법
+
+터미널에서 아래 명령어를 입력하세요:
 
 \`\`\`bash
 claude auth login
 \`\`\`
 
-브라우저가 열리면 Claude.ai 계정으로 로그인하세요. 완료되면 자동으로 인증됩니다.
+브라우저가 자동으로 열리면 Claude.ai 계정으로 로그인하세요. 완료되면 터미널로 돌아와 자동으로 인증됩니다.
 
 > **요금**: Claude Pro 또는 Max 구독이 필요합니다. 구독 요금 내에서 사용할 수 있습니다.
 
-### 방법 2: API 키 직접 입력
-Anthropic API 키를 발급받아 환경 변수로 설정하는 방법입니다.
+### 인증 확인
 
-**API 키 발급**
-1. [console.anthropic.com](https://console.anthropic.com) 에 접속합니다
-2. 회원가입 또는 로그인합니다
-3. **API Keys** 메뉴로 이동합니다
-4. **Create Key** 버튼을 클릭합니다
-5. 생성된 키를 복사합니다 (다시 볼 수 없으니 안전한 곳에 저장하세요)
+로그인이 잘 되었는지 확인하려면 바로 Claude Code를 실행해 보세요:
 
-**환경 변수 설정**
-
-macOS / Linux:
 \`\`\`bash
-export ANTHROPIC_API_KEY=sk-ant-...여기에_복사한_키_붙여넣기
+claude
 \`\`\`
 
-Windows (PowerShell):
-\`\`\`bash
-$env:ANTHROPIC_API_KEY = "sk-ant-...여기에_복사한_키_붙여넣기"
-\`\`\`
-
-설정 후 \`claude\` 명령어를 실행하면 바로 사용할 수 있습니다.
-
-> **참고**: 터미널을 닫으면 환경 변수가 초기화됩니다. 매번 설정하기 번거롭다면 방법 1(브라우저 로그인)을 추천합니다.
-
-> **요금**: API 사용량에 따라 과금됩니다. [console.anthropic.com](https://console.anthropic.com)에서 사용량을 확인할 수 있습니다.
-
-### 두 방법 비교
-
-| | 브라우저 로그인 | API 키 |
-|--|----------------|--------|
-| 설정 난이도 | 쉬움 (로그인만 하면 끝) | 보통 (키 발급 필요) |
-| 요금 방식 | 구독제 (Pro/Max) | 사용량 기반 과금 |
-| API 키 필요 | 불필요 | 필요 |`,
+대화창이 정상적으로 나타나면 인증 완료입니다.`,
     },
   ],
   usage: [
@@ -304,7 +279,7 @@ $env:ANTHROPIC_API_KEY = "sk-ant-...여기에_복사한_키_붙여넣기"
 
 | 오류 메시지 | 원인 | 해결 방법 |
 |------------|------|----------|
-| \`401 Unauthorized\` | 인증 만료 또는 잘못된 API 키 | \`claude auth login\`으로 재로그인 |
+| \`401 Unauthorized\` | 인증 만료 또는 로그인 필요 | \`claude auth login\`으로 재로그인 |
 | \`429 Rate limit\` | 요청을 너무 빠르게 보냄 | 잠시 기다렸다가 다시 시도 |
 | \`Network error\` | 인터넷 연결 문제 | 와이파이/네트워크 확인 |
 | \`503 Overloaded\` | 서버가 일시적으로 바쁨 | 1~2분 후 다시 시도 |
