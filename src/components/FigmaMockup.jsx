@@ -85,8 +85,8 @@ export default function FigmaMockup() {
             marginBottom: '0.75rem',
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-              <span style={{ color: '#999', fontSize: '0.75rem' }}>&#9664;</span>
               <span style={{ color: '#e0e0e0', fontWeight: 600, fontSize: '0.82rem' }}>MCP</span>
+              <span style={{ color: '#999', fontSize: '0.65rem' }}>&#709;</span>
             </div>
             <div style={{ display: 'flex', gap: 8 }}>
               <span style={{ color: '#999', fontSize: '0.75rem' }}>?</span>
