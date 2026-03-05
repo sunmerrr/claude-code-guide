@@ -391,15 +391,36 @@ Claude Code 대화창에서 아래 명령어를 입력합니다:
 claude mcp add 서버이름 -- 실행명령어
 \`\`\`
 
-### 자주 쓰는 MCP 서버 예시
+### 예시: Figma 연결하기
 
-**1. 파일 시스템 (Filesystem)**
+디자이너가 만든 Figma 디자인을 Claude Code에서 바로 읽어서 코드로 변환할 수 있습니다.
+
+**1단계: Figma MCP 추가**
+\`\`\`bash
+claude mcp add --transport http figma https://mcp.figma.com/mcp
+\`\`\`
+
+**2단계: 인증**
+명령어를 실행하면 브라우저가 열리고 Figma 로그인을 요청합니다. 로그인하면 자동으로 연결됩니다.
+
+**3단계: 사용하기**
+Claude Code 대화창에서 Figma 파일 링크를 붙여넣고 요청하세요:
+\`\`\`
+이 Figma 디자인을 보고 똑같이 React 컴포넌트로 만들어줘
+https://www.figma.com/design/xxxxx/...
+\`\`\`
+
+> **참고**: Figma MCP를 사용하려면 Figma 유료 플랜(Dev 또는 Full seat)이 필요합니다.
+
+### 다른 MCP 서버 예시
+
+**파일 시스템 (Filesystem)**
 특정 폴더의 파일을 읽고 쓸 수 있게 해줍니다:
 \`\`\`bash
 claude mcp add filesystem -- npx -y @modelcontextprotocol/server-filesystem ~/Documents
 \`\`\`
 
-**2. GitHub**
+**GitHub**
 GitHub 저장소, 이슈, PR을 관리할 수 있습니다:
 \`\`\`bash
 claude mcp add github -- npx -y @modelcontextprotocol/server-github
