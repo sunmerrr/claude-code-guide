@@ -3,6 +3,7 @@ import remarkGfm from "remark-gfm";
 import { guide } from "../data/guide";
 import mdComponents from "../components/mdComponents";
 import PageNav from "../components/PageNav";
+import FigmaMockup from "../components/FigmaMockup";
 
 export default function Advanced() {
   return (
@@ -17,9 +18,22 @@ export default function Advanced() {
               {section.title}
             </a>
           </h2>
-          <ReactMarkdown remarkPlugins={[remarkGfm]} components={mdComponents}>
-            {section.content}
-          </ReactMarkdown>
+          {section.slug === 'mcp' ? (
+            <>
+              {section.content.split('<!-- FIGMA_MOCKUP -->').map((part, i) => (
+                <div key={i}>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]} components={mdComponents}>
+                    {part}
+                  </ReactMarkdown>
+                  {i === 0 && <FigmaMockup />}
+                </div>
+              ))}
+            </>
+          ) : (
+            <ReactMarkdown remarkPlugins={[remarkGfm]} components={mdComponents}>
+              {section.content}
+            </ReactMarkdown>
+          )}
         </section>
       ))}
 

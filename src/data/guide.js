@@ -401,10 +401,14 @@ claude mcp add --transport http figma https://mcp.figma.com/mcp
 \`\`\`
 
 **2단계: 인증**
-명령어를 실행하면 브라우저가 열리고 Figma 로그인을 요청합니다. 로그인하면 자동으로 연결됩니다.
+위 명령어를 실행하면 브라우저가 자동으로 열립니다. Figma에 로그인하면 연결 완료!
 
 **3단계: 사용하기**
-Claude Code 대화창에서 Figma 파일 링크를 붙여넣고 요청하세요:
+Figma에서 원하는 프레임을 선택하고 우클릭 → **Copy/Paste as** → **Copy link** 로 링크를 복사합니다. (또는 상단 주소창의 URL을 그대로 복사해도 됩니다.)
+
+<!-- FIGMA_MOCKUP -->
+
+Claude Code 대화창에 링크를 붙여넣고 요청하세요:
 \`\`\`
 이 Figma 디자인을 보고 똑같이 React 컴포넌트로 만들어줘
 https://www.figma.com/design/xxxxx/...
