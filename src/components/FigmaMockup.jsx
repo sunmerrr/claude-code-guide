@@ -53,11 +53,11 @@ export default function FigmaMockup() {
 
       {/* Canvas area */}
       <div style={{ padding: '1.25rem', position: 'relative', minHeight: 200 }}>
-        {/* Mock frame */}
+        {/* Mock frame — modal dialog */}
         <div style={{
           border: '2px solid #0d99ff',
           borderRadius: 4,
-          padding: '1rem',
+          padding: '0.75rem',
           width: 'fit-content',
           position: 'relative',
         }}>
@@ -69,12 +69,39 @@ export default function FigmaMockup() {
           </div>
           <div style={{
             background: '#3c3c3c',
-            borderRadius: 6,
-            padding: '0.75rem 1.5rem',
-            color: '#e0e0e0',
-            fontSize: '0.85rem',
+            borderRadius: 12,
+            padding: '1.25rem 1.5rem 1rem',
+            width: 240,
           }}>
-            Login Page
+            <div style={{
+              color: '#fff', fontWeight: 700, fontSize: '0.95rem',
+              textAlign: 'center', marginBottom: '0.6rem',
+            }}>
+              제목
+            </div>
+            <div style={{
+              color: '#999', fontSize: '0.8rem', marginBottom: '1rem',
+            }}>
+              내용이 들어갑니다.
+            </div>
+            <div style={{ display: 'flex', gap: '0.5rem' }}>
+              <div style={{
+                flex: 1, textAlign: 'center',
+                padding: '0.5rem', borderRadius: 8,
+                background: '#555', color: '#fff',
+                fontSize: '0.82rem', fontWeight: 600,
+              }}>
+                취소
+              </div>
+              <div style={{
+                flex: 1, textAlign: 'center',
+                padding: '0.5rem', borderRadius: 8,
+                background: '#ff5722', color: '#fff',
+                fontSize: '0.82rem', fontWeight: 600,
+              }}>
+                확인
+              </div>
+            </div>
           </div>
         </div>
 
