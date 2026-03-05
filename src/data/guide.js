@@ -404,7 +404,7 @@ claude mcp add --transport http figma https://mcp.figma.com/mcp
 위 명령어를 실행하면 브라우저가 자동으로 열립니다. Figma에 로그인하면 연결 완료!
 
 **3단계: 사용하기**
-Figma에서 원하는 프레임을 선택하고 우클릭 → **Copy/Paste as** → **Copy link** 로 링크를 복사합니다. (또는 상단 주소창의 URL을 그대로 복사해도 됩니다.)
+Figma에서 원하는 프레임을 선택하면 오른쪽 사이드바에 **MCP 패널**이 나타납니다. 여기서 링크와 프롬프트를 복사할 수 있습니다.
 
 <!-- FIGMA_MOCKUP -->
 

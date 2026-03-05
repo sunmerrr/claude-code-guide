@@ -1,34 +1,4 @@
 export default function FigmaMockup() {
-  const menuItem = (label, shortcut, highlight) => (
-    <div style={{
-      display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-      padding: '4px 12px',
-      fontSize: '0.8rem',
-      color: highlight ? '#fff' : '#c5c5c5',
-      background: highlight ? '#0d99ff' : 'transparent',
-      borderRadius: highlight ? 4 : 0,
-      cursor: 'pointer',
-      minWidth: 200,
-    }}>
-      <span>{label}</span>
-      {shortcut && <span style={{ fontSize: '0.72rem', color: highlight ? 'rgba(255,255,255,0.7)' : '#8b8b8b', marginLeft: 24 }}>{shortcut}</span>}
-    </div>
-  );
-
-  const subMenuItem = (label, highlight) => (
-    <div style={{
-      padding: '4px 12px',
-      fontSize: '0.8rem',
-      color: highlight ? '#fff' : '#c5c5c5',
-      background: highlight ? '#0d99ff' : 'transparent',
-      borderRadius: highlight ? 4 : 0,
-      cursor: 'pointer',
-      minWidth: 160,
-    }}>
-      {label}
-    </div>
-  );
-
   return (
     <div style={{
       background: '#2c2c2c',
@@ -51,107 +21,133 @@ export default function FigmaMockup() {
         <span style={{ color: '#999', fontSize: '0.75rem', marginLeft: 8 }}>Figma</span>
       </div>
 
-      {/* Canvas area */}
-      <div style={{ padding: '1.25rem', position: 'relative', minHeight: 200 }}>
-        {/* Mock frame — modal dialog */}
-        <div style={{
-          border: '2px solid #0d99ff',
-          borderRadius: 4,
-          padding: '0.75rem',
-          width: 'fit-content',
-          position: 'relative',
-        }}>
+      {/* Main area: canvas + sidebar */}
+      <div style={{ display: 'flex' }}>
+        {/* Canvas */}
+        <div style={{ flex: 1, padding: '1.25rem', minHeight: 180 }}>
+          {/* Mock frame — modal dialog */}
           <div style={{
-            position: 'absolute', top: -20, left: 0,
-            fontSize: '0.7rem', color: '#0d99ff', fontWeight: 600,
-          }}>
-            Frame 1
-          </div>
-          <div style={{
-            background: '#3c3c3c',
-            borderRadius: 12,
-            padding: '1.25rem 1.5rem 1rem',
-            width: 240,
+            border: '2px solid #0d99ff',
+            borderRadius: 4,
+            padding: '0.75rem',
+            width: 'fit-content',
+            position: 'relative',
+            marginTop: 16,
           }}>
             <div style={{
-              color: '#fff', fontWeight: 700, fontSize: '0.95rem',
-              textAlign: 'center', marginBottom: '0.6rem',
+              position: 'absolute', top: -18, left: 0,
+              fontSize: '0.7rem', color: '#0d99ff', fontWeight: 600,
             }}>
-              제목
+              Frame 1
             </div>
             <div style={{
-              color: '#999', fontSize: '0.8rem', marginBottom: '1rem',
+              background: '#3c3c3c',
+              borderRadius: 12,
+              padding: '1.25rem 1.5rem 1rem',
+              width: 220,
             }}>
-              내용이 들어갑니다.
-            </div>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
               <div style={{
-                flex: 1, textAlign: 'center',
-                padding: '0.5rem', borderRadius: 8,
-                background: '#555', color: '#fff',
-                fontSize: '0.82rem', fontWeight: 600,
+                color: '#fff', fontWeight: 700, fontSize: '0.95rem',
+                textAlign: 'center', marginBottom: '0.6rem',
               }}>
-                취소
+                제목
               </div>
-              <div style={{
-                flex: 1, textAlign: 'center',
-                padding: '0.5rem', borderRadius: 8,
-                background: '#ff5722', color: '#fff',
-                fontSize: '0.82rem', fontWeight: 600,
-              }}>
-                확인
+              <div style={{ color: '#999', fontSize: '0.8rem', marginBottom: '1rem' }}>
+                내용이 들어갑니다.
+              </div>
+              <div style={{ display: 'flex', gap: '0.5rem' }}>
+                <div style={{
+                  flex: 1, textAlign: 'center', padding: '0.5rem', borderRadius: 8,
+                  background: '#555', color: '#fff', fontSize: '0.82rem', fontWeight: 600,
+                }}>
+                  취소
+                </div>
+                <div style={{
+                  flex: 1, textAlign: 'center', padding: '0.5rem', borderRadius: 8,
+                  background: '#ff5722', color: '#fff', fontSize: '0.82rem', fontWeight: 600,
+                }}>
+                  확인
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Context menu */}
+        {/* Right sidebar — MCP panel */}
         <div style={{
-          position: 'absolute',
-          top: 50, right: 40,
-          background: '#2a2a2a',
-          border: '1px solid #555',
-          borderRadius: 6,
-          padding: '4px 0',
-          boxShadow: '0 4px 16px rgba(0,0,0,0.5)',
+          width: 240, borderLeft: '1px solid #444',
+          background: '#1e1e1e', padding: '0.75rem',
+          fontSize: '0.8rem',
         }}>
-          {menuItem('Cut', '⌘X')}
-          {menuItem('Copy', '⌘C')}
-          {menuItem('Paste here', '⌘V')}
-          <div style={{ height: 1, background: '#444', margin: '4px 0' }} />
-          <div style={{ display: 'flex', position: 'relative' }}>
-            <div style={{ flex: 1 }}>
-              {menuItem('Copy/Paste as', '▸', true)}
+          {/* MCP header */}
+          <div style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            marginBottom: '0.75rem',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <span style={{ color: '#999', fontSize: '0.75rem' }}>&#9664;</span>
+              <span style={{ color: '#e0e0e0', fontWeight: 600, fontSize: '0.82rem' }}>MCP</span>
             </div>
-            {/* Submenu */}
-            <div style={{
-              position: 'absolute',
-              left: '100%',
-              top: -4,
-              background: '#2a2a2a',
-              border: '1px solid #555',
-              borderRadius: 6,
-              padding: '4px 0',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.5)',
-            }}>
-              {subMenuItem('Copy as PNG')}
-              {subMenuItem('Copy as SVG')}
-              {subMenuItem('Copy as CSS')}
-              <div style={{ height: 1, background: '#444', margin: '4px 0' }} />
-              {subMenuItem('Copy link', true)}
-              <div style={{
-                padding: '2px 12px',
-                fontSize: '0.68rem',
-                color: '#0d99ff',
-                marginTop: 2,
-              }}>
-                ↑ 이걸 클릭!
-              </div>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <span style={{ color: '#999', fontSize: '0.75rem' }}>?</span>
+              <span style={{ color: '#999', fontSize: '0.75rem' }}>&#9881;</span>
             </div>
           </div>
-          <div style={{ height: 1, background: '#444', margin: '4px 0' }} />
-          {menuItem('Select layer', '▸')}
-          {menuItem('Group selection', '⌘G')}
+
+          {/* Selection details */}
+          <div style={{ color: '#c5c5c5', fontWeight: 600, fontSize: '0.78rem', marginBottom: '0.5rem' }}>
+            선택 세부사항
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
+            <span style={{ color: '#999', fontSize: '0.75rem' }}>세션 활동</span>
+            <span style={{ color: '#c5c5c5', fontSize: '0.75rem' }}>전송되지 않음</span>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
+            <span style={{ color: '#999', fontSize: '0.75rem' }}>예상 토큰 수</span>
+            <span style={{ color: '#c5c5c5', fontSize: '0.75rem' }}>563</span>
+          </div>
+
+          {/* Prompt box */}
+          <div style={{
+            background: '#2a2a2a',
+            border: '1px solid #444',
+            borderRadius: 6,
+            padding: '0.6rem 0.75rem',
+            marginBottom: '0.75rem',
+          }}>
+            <div style={{ color: '#c5c5c5', fontSize: '0.78rem', marginBottom: '0.35rem' }}>
+              이 1개의 디자인을 Figma에서 구현하세요.
+            </div>
+            <div style={{
+              color: '#0d99ff', fontSize: '0.72rem',
+              wordBreak: 'break-all',
+            }}>
+              @https://www.figma.com/design/Lx0LeSZc...
+            </div>
+          </div>
+
+          {/* Copy button */}
+          <div style={{
+            background: '#2a2a2a',
+            border: '1px solid #444',
+            borderRadius: 6,
+            padding: '0.45rem',
+            textAlign: 'center',
+            color: '#c5c5c5',
+            fontSize: '0.78rem',
+            cursor: 'pointer',
+            marginBottom: '0.5rem',
+          }}>
+            예제 프롬프트 복사
+          </div>
+
+          {/* Arrow annotation */}
+          <div style={{
+            color: '#0d99ff', fontSize: '0.72rem',
+            textAlign: 'center',
+          }}>
+            ↑ 이 링크를 Claude Code에 붙여넣기!
+          </div>
         </div>
       </div>
     </div>
